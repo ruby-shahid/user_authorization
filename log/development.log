@@ -1,0 +1,1992 @@
+Started GET "/" for 127.0.0.1 at 2017-10-13 12:27:32 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 49ms (Views: 26.0ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 12:28:02 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000707975s
+  Rendered people/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 1585ms (Views: 1540.5ms)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2017-10-13 12:29:59 +0530
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (317.0ms)
+  Rendered people/new.html.erb within layouts/application (318.0ms)
+Completed 200 OK in 333ms (Views: 332.0ms)
+
+
+Started POST "/people" for 127.0.0.1 at 2017-10-13 12:30:16 +0530
+Processing by PeopleController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wq2d6G7jggfJ0lJUQKvB3nsOg9DQCDkSuS7vupVfxmPshwX8kIYTJ1inQkMR8ZIGAY0//X+lZx/I6lzEZGlByg==", "person"=>{"name"=>"Shahid", "street"=>"BTM", "city"=>"Banglore", "state"=>"Karnatak"}, "commit"=>"Create Person"}
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"people", "documents"=>[{"_id"=>BSON::ObjectId('59e064806b6ff2134c8b1c3f'), "name"=>"Shahid", "street"=>"BTM", "city"=>"Banglore", "state"=>"Karnatak"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.30219383s
+Redirected to http://localhost:3000/people/59e064806b6ff2134c8b1c3f
+Completed 302 Found in 305ms
+
+
+Started GET "/people/59e064806b6ff2134c8b1c3f" for 127.0.0.1 at 2017-10-13 12:30:16 +0530
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"59e064806b6ff2134c8b1c3f"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{"_id"=>BSON::ObjectId('59e064806b6ff2134c8b1c3f')}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00051373s
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 12.0ms)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"people", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00069519s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0009293989999999999s
+Started GET "/people/59e064806b6ff2134c8b1c3f" for 127.0.0.1 at 2017-10-13 13:01:44 +0530
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"59e064806b6ff2134c8b1c3f"}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{"_id"=>BSON::ObjectId('59e064806b6ff2134c8b1c3f')}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001105246s
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 229ms (Views: 206.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-10-13 13:01:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user" for 127.0.0.1 at 2017-10-13 13:02:03 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2017-10-13 13:02:27 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.001592186s
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:03:25 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 80ms (Views: 73.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:03:33 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 23ms (Views: 22.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 13:04:08 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tf9wMpRyt3SahAxtzQM/K/c6n1QQExASWl3FS9N+6YyjN8XFeaHOrnVwJcHhNu8unu3D79WrwObDpS69x+ocJg==", "user"=>{"email"=>"test@progton.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000429691s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$x6/ckBp897rj.D2lRwoUH.MCxb8Y3vcp7mW.Y1uK4XQd3BlxplY56", "sign_in_count"=>0}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.203522029s
+MONGODB | localhost:27017 | mongo_people_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "u"=>{"$set"=>{"last_sign_in_at"=>2017-10-13 07:34:08 UTC, "current_sign_in_at"=>2017-10-13 07:34:08 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>...
+MONGODB | localhost:27017 | mongo_people_development.update | SUCCEEDED | 0.000540055s
+Redirected to http://localhost:3000/
+Completed 302 Found in 371ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:04:08 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 3ms (Views: 2.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-10-13 13:04:25 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000734931s
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:10:47 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:10:58 +0530
+Processing by Devise::SessionsController#new as HTML
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000500784s
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:10:58 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2017-10-13 13:12:27 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_out" for 127.0.0.1 at 2017-10-13 13:13:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_out" for 127.0.0.1 at 2017-10-13 13:15:59 +0530
+Processing by Devise::SessionsController#destroy as HTML
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001656684s
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:16:00 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 9ms (Views: 7.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:16:34 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (10.2ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 166ms (Views: 157.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:16:51 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 37ms (Views: 35.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:18:38 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 23ms (Views: 21.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:27:53 +0530
+  
+NoMethodError (undefined method `attr_accessible' for User:Class
+Did you mean?  attr_accessor):
+  
+app/models/user.rb:27:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+config/routes.rb:2:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:28:18 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 33ms (Views: 31.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:41:43 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 21ms (Views: 20.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:41:46 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 32ms (Views: 31.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:44:05 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 39ms (Views: 38.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:44:12 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 25ms (Views: 24.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:44:20 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IRzk4mz1mr/Tp1Q010UU5qLi48W48VXO3wHWr8kyOq1WM1JkAwA0QpilUv43QdKSwXS7RdwBT7bIQawMhOlG4A==", "user"=>{"email"=>"test@progton.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000928361s
+MONGODB | localhost:27017 | mongo_people_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "u"=>{"$set"=>{"current_sign_in_at"=>2017-10-13 08:14:21 UTC, "sign_in_count"=>2}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.update | SUCCEEDED | 0.0005187s
+Redirected to http://localhost:3000/
+Completed 302 Found in 167ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:44:21 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 4ms (Views: 3.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2017-10-13 13:44:41 +0530
+Processing by Users::SessionsController#destroy as HTML
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0008093639999999999s
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:44:41 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 7ms (Views: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:45:06 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 12ms (Views: 5.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 13:45:13 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0029691519999999996s
+  Rendered people/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 208ms (Views: 197.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:49:09 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 44ms (Views: 42.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:49:18 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"STF8TvD8EPTiUSN7Ruy9LtiO6fPxsbBsLMmdgx5m22in8y4MCYSy8++m9YZVUDqPOQcaS4Qi6gLnU2wWdvOsCg==", "user"=>{"email"=>"test@progton.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000658623s
+MONGODB | localhost:27017 | mongo_people_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "u"=>{"$set"=>{"last_sign_in_at"=>2017-10-13 08:14:21 UTC, "current_sign_in_at"=>2017-10-13 08:19:18 UTC, "sign_in_count"=>3}}, "multi"=>false, "upsert"=>false}...
+MONGODB | localhost:27017 | mongo_people_development.update | SUCCEEDED | 0.000510054s
+Redirected to http://localhost:3000/
+Completed 302 Found in 148ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:49:18 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 4ms (Views: 2.8ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 13:49:25 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0006067119999999999s
+  Rendered people/index.html.erb within layouts/application (4.8ms)
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000511163s
+Completed 200 OK in 54ms (Views: 52.2ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 13:50:40 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0004916149999999999s
+  Rendered people/index.html.erb within layouts/application (2.7ms)
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000469553s
+Completed 200 OK in 36ms (Views: 31.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-10-13 13:50:46 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FkZXBYXLlEk7kZWHnlU9UBRPRzDsOJJDirtsvSgVjQY2ddIHmzhdncN41zCyLTuNpK1vlHKMfzJEwSaALOeCgg=="}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00044057199999999997s
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 13:50:46 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00041211400000000005s
+  Rendered people/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 16ms (Views: 15.2ms)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001821483s
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:58:56 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 233ms (Views: 221.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:59:02 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 29ms (Views: 26.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 13:59:06 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (3.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 46ms (Views: 43.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:59:08 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 38ms (Views: 36.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:59:30 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 32ms (Views: 30.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 13:59:46 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 195ms (Views: 185.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:01:19 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 26ms (Views: 25.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:03:09 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 44ms (Views: 43.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:03:39 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 32ms (Views: 31.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 14:03:47 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eOmCyeGOYgrblsQvlTwJKbrzpXa6hCHq/8eJuN96Ub4GQLvcgAvtVgDRXieMGfWf1o9xdu3zs0UexuLjqFCz5A==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 60ms (Views: 43.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:05:14 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 37ms (Views: 36.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:06:46 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 220ms (Views: 206.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:08:03 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 31ms (Views: 29.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:08:05 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered /home/progton/.rvm/gems/ruby-2.4.1/gems/devise-4.3.0/app/views/devise/registrations/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 52ms (Views: 51.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:08:22 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 238ms (Views: 227.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:10:48 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 23.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 14:11:38 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 25ms (Views: 24.1ms)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001409518s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000310213s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000732871s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001070357s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e085176b6ff2213ac5bcbb'), "name"=>"admin"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.252680759s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000749826s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000674935s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000562784s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e085176b6ff2213ac5bcbb')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000627169s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00048159699999999995s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0005275939999999999s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00045847899999999997s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"admin"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0007987350000000001s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e085746b6ff2213ac5bcbc'), "name"=>"admin"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.0005083970000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"Guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000598362s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e085746b6ff2213ac5bcbd'), "name"=>"Guest"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000424465s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"user"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000374667s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e085746b6ff2213ac5bcbe'), "name"=>"user"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.00037378700000000005s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000596621s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00048012200000000004s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000565255s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000737678s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e06c706b6ff216af84dfd6')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.0006861020000000001s
+Started GET "/users" for 127.0.0.1 at 2017-10-13 14:52:02 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2017-10-13 14:52:24 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aUGmVOxpGtsn4y1OqPUXkM3OBK+PTNq0JuoRAe5NlmEX6J9BjeyVh/ykt0ax0OsmobLQr9g7SBvH63pamWd0Ow==", "user"=>{"email"=>"test@progton.com", "home_address"=>"homw address", "work_address"=>"work address", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000833317s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 294ms (Views: 129.2ms)
+
+
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000652631s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000910286s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>-1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000762221s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>2}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000573048s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00035636s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000830386s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000406022s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00040306900000000004s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0006143670000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000891181s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000512101s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0008596350000000001s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0006657200000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0005840149999999999s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e085746b6ff2213ac5bcbc')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000617192s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e085746b6ff2213ac5bcbd')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000548708s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e085746b6ff2213ac5bcbe')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.0005609269999999999s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000646993s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000317687s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"admin"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000890707s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e088fa6b6ff2213ac5bcc0'), "name"=>"admin"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000879784s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"Guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000641612s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e088fa6b6ff2213ac5bcc1'), "name"=>"Guest"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000252678s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"user"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000328892s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e088fa6b6ff2213ac5bcc2'), "name"=>"user"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000452237s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000680572s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000408295s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000775301s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000591254s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00058155s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00044079300000000003s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e088fa6b6ff2213ac5bcc0')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.0005651089999999999s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e088fa6b6ff2213ac5bcc1')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000511321s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e088fa6b6ff2213ac5bcc2')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000468668s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"admin"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000772468s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e08ad26b6ff2213ac5bcc4'), "name"=>"admin"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.001021974s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000330634s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e08ad26b6ff2213ac5bcc5'), "name"=>"guest"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.00027636399999999997s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"user"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00028577s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e08ad26b6ff2213ac5bcc6'), "name"=>"user"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000268561s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00066564s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000667292s
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 15:15:00 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 37ms (Views: 35.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 15:15:18 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9jq8tWg5nppkrPlMZreQRh764usmUNdvL7p1+uwjmTiIk4WgCbwRxr/rY0R/kmzwcoY263EnRcDOux6hmwl7Yg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"home address", "work_address"=>"work address", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+Completed 500 Internal Server Error in 152ms
+
+
+  
+NoMethodError (undefined method `find_by_name' for Role:Class
+Did you mean?  find_by):
+  
+app/models/user.rb:45:in `set_default_role'
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000363941s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0006495310000000001s
+Started POST "/users" for 127.0.0.1 at 2017-10-13 15:18:34 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9jq8tWg5nppkrPlMZreQRh764usmUNdvL7p1+uwjmTiIk4WgCbwRxr/rY0R/kmzwcoY263EnRcDOux6hmwl7Yg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"home address", "work_address"=>"work address", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00053998s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 154ms (Views: 19.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 15:19:59 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pcvO/1CCnUhSttOvluRynBZjw22nSdQfjaK2ZZv3ndXbYvfqMQcSFInxSaePwY4qeh8XbfA+RrBso90+7N1/jw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"home address", "work_address"=>"home address", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00046143899999999996s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 158ms (Views: 20.1ms)
+
+
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0007351419999999999s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000445387s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0007741720000000001s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0005149730000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000733611s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000601489s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000834058s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000654295s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000502119s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e08ad26b6ff2213ac5bcc4')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000671859s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e08ad26b6ff2213ac5bcc5')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000456014s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e08ad26b6ff2213ac5bcc6')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000408454s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000566427s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000540314s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"admin"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000410049s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e08da86b6ff2213ac5bccb'), "name"=>"admin"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.001098485s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000599992s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e08da86b6ff2213ac5bccc'), "name"=>"guest"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.0005872799999999999s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"user"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00048706099999999995s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e08da86b6ff2213ac5bccd'), "name"=>"user"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.00037427399999999996s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0008885049999999999s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00032686399999999995s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0011970540000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000703774s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000430202s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00035116099999999995s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e08da86b6ff2213ac5bccb')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000393153s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e08da86b6ff2213ac5bccc')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.00037213999999999997s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e08da86b6ff2213ac5bccd')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.003935397s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"admin"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00079197s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcbe'), "name"=>"admin"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000395963s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00054975s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcbf'), "name"=>"guest"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.0005331930000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"user"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000545035s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcc0'), "name"=>"user"}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000394086s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000787478s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000744765s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00045818s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001602147s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000439175s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e096e16b6ff2242bc5bcc2'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$/nHvpdNjMj.8FohgIJ0/JuOkZp8k0hQIgQyQ.DAvb769UXUVGmt3C", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000423456s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"role_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcbe')}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000621539s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000478336s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000668687s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000670247s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcbe')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00041633s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001776636s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000875983s
+MONGODB | localhost:27017 | mongo_people_development.update | STARTED | {"update"=>"roles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcbf')}, "u"=>{"$push"=>{"users"=>{"_id"=>BSON::ObjectId('59e098d46b6ff2263bc5bcbb'), "email"=>"test2@progton.com", "encrypted_password"=>"$2a$11$62SUe/uZVkW3RSK816xIfub...
+MONGODB | localhost:27017 | mongo_people_development.update | SUCCEEDED | 0.000626122s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000562911s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000859356s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000747798s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000565825s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000633648s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcbe')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000566372s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcbf')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.0005183490000000001s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"roles", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e090516b6ff2242bc5bcc0')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.0006397309999999999s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000639783s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"admin"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000933929s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e09bdc6b6ff226f7c5bcbb'), "name"=>"admin", "updated_at"=>2017-10-13 10:56:28 UTC, "created_at"=>2017-10-13 10:56:28 UTC}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.0005990380000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0005467670000000001s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e09bdc6b6ff226f7c5bcbc'), "name"=>"guest", "updated_at"=>2017-10-13 10:56:28 UTC, "created_at"=>2017-10-13 10:56:28 UTC}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.00041637499999999997s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"user"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000526705s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"roles", "documents"=>[{"_id"=>BSON::ObjectId('59e09bdc6b6ff226f7c5bcbd'), "name"=>"user", "updated_at"=>2017-10-13 10:56:28 UTC, "created_at"=>2017-10-13 10:56:28 UTC}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.0007029489999999999s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"roles", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000282029s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001002185s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{}, "sort"=>{"_id"=>-1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00104217s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000814285s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000503602s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000742573s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000563883s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000597065s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e096e16b6ff2242bc5bcc2')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000707463s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000625099s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000871771s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000719424s
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00084515s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000731414s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000730647s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0007421400000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000763462s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0a06e6b6ff227cbc5bcbd'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$rmTSrjXWo2wGVkCFJxno2.fm74vFhhYEN1QZd24phsIqxilEInchu", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.0005829580000000001s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000629491s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000624179s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0a06e6b6ff227cbc5bcbd')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000628442s
+Started GET "/" for 127.0.0.1 at 2017-10-13 16:48:21 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001053588s
+  Rendered people/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 173ms (Views: 161.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 16:48:24 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 40ms (Views: 37.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 16:48:30 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.3ms)
+  Rendered users/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 26ms (Views: 25.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 16:49:10 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"te+oPKlFp7iMvR2lvJoKqlDbEO1AMolHBvL0QlJpV1bJ1dY9cHtijUW8k+Q8FIJFR2ANzp4Ee7MbOQdDjqpNfg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"home", "work_address"=>"work", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000478191s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 163ms (Views: 21.4ms)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0006046430000000001s
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 16:54:39 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 186ms (Views: 177.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 16:55:20 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pAIR0NcHDlUvEG5VZaHfeQFL3xqnaQ4TayN1zWAWEUbYOG/RDjnLYOYR4BTlL1eWFvDCOXlf/Od26IbMvNULbg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00076774s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 183ms (Views: 36.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 16:56:16 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y4xXfXJReIk9mcMo68uBQdIkvATTRjgK4VL6xIRp5MAdJW5oE9T31ebeWSDy7n33vlhoBIQxqqUAU5Gf80MGmg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000520104s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.5ms)
+  Rendered users/registrations/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 161ms (Views: 24.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 16:57:44 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5ig0IqdOo/orY0avOdMFUS2FX6o9zLYfAiovw20lLFRMZnF6xi10zPqFxKlwrCjKMrBfv+AoHedCcPkep526w==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000665334s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 166ms (Views: 30.5ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 16:58:51 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00045438900000000003s
+  Rendered people/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9073ms (Views: 16.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 17:00:21 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 185ms (Views: 174.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:00:40 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OAOtURaoT5SCYorWa1qTxRQCVGuvHLpsCN2pQMLsTnZGqpREdy3AyFklEN5yf29zeH6Aa/hrKMPp3MIbtcasLA==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000764396s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.2ms)
+  Rendered users/registrations/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 173ms (Views: 20.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 17:02:39 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 7091ms (Views: 151.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:03:05 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G6qhGq31KYb3pkSPFQn7oI5x4qqK7m14pRcsWgeFQXBlA5gPzHCm2izh3ocMLAcW4g02qt2Z/9dEFkcBcK+jKg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000980162s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (6.0ms)
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0005716590000000001s
+Completed 500 Internal Server Error in 33863ms (Views: 28.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users/registrations_controller.rb:14:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:04:19 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G6qhGq31KYb3pkSPFQn7oI5x4qqK7m14pRcsWgeFQXBlA5gPzHCm2izh3ocMLAcW4g02qt2Z/9dEFkcBcK+jKg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000983135s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/registrations/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 6509ms (Views: 187.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:06:07 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dfS2XWEbueHjreEiHKDHcDe2Iqq1c/B1LZCTqOTTj8ULXY9IAJ42vTjqeyoFhTvGW8r2quIEYtrMkfjzk/ltnw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 105542ms
+
+
+  
+RuntimeError (hi):
+  
+app/controllers/users/registrations_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:08:08 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dfS2XWEbueHjreEiHKDHcDe2Iqq1c/B1LZCTqOTTj8ULXY9IAJ42vTjqeyoFhTvGW8r2quIEYtrMkfjzk/ltnw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000675095s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00041987000000000003s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000621362s
+Completed 500 Internal Server Error in 533948ms
+
+
+  
+RuntimeError (hi):
+  
+app/controllers/users/registrations_controller.rb:13:in `create'
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:17:50 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dfS2XWEbueHjreEiHKDHcDe2Iqq1c/B1LZCTqOTTj8ULXY9IAJ42vTjqeyoFhTvGW8r2quIEYtrMkfjzk/ltnw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0007670040000000001s
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0009994510000000002s
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 473ms (Views: 166.6ms)
+
+
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.0014669190000000001s
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:18:49 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OZZkc6pumzJrVDaQcv+H/xvpxSG0ihPID67254kkxnFHP11my+sUbrATrJhr2ntJd5URIeP9gWfur528/g4kKw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000565804s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00055804s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000441579s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000411883s
+Completed 500 Internal Server Error in 152696ms
+
+
+  
+RuntimeError (#<User _id: BSON::ObjectId('59e0a82c6b6ff22cf63d70c5'), created_at: Fri, 13 Oct 2017 11:51:09 UTC +00:00, email: "test@progton.com", home_address: nil, role_id: BSON::ObjectId('59e09bdc6b6ff226f7c5bcbc'), updated_at: Fri, 13 Oct 2017 11:51:09 UTC +00:00, work_address: nil>):
+  
+app/models/user.rb:47:in `set_default_role'
+app/controllers/users/registrations_controller.rb:14:in `create'
+Started GET "/users" for 127.0.0.1 at 2017-10-13 17:21:47 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/singn_up" for 127.0.0.1 at 2017-10-13 17:21:56 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users/singn_up"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 17:22:01 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.9ms)
+  Rendered users/registrations/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 209ms (Views: 204.7ms)
+
+
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000741555s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00038677s
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:22:45 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"liQNV41M1HqMYRqK/o0/qNHviSmXEe6I+wRR0D7jfHDojTRC7MlbJlcmgILnqMMevZNdKcBmfCcaBTqLScmeKg==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0009014110000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000453344s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0a9356b6ff22da27693d5'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$EvYC2N9k3/kglaAS8BlDE.3q2LT6Il5FXEp7rkkO44cY4zp5LBZ7S", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000389085s
+Redirected to 
+Completed 500 Internal Server Error in 86457ms
+
+
+  
+NoMethodError (undefined method `user_url' for #<Users::RegistrationsController:0x007faa44065180>):
+  
+app/controllers/users/registrations_controller.rb:15:in `create'
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000739261s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00071685s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0007862580000000001s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0a9356b6ff22da27693d5')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000762419s
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 17:27:11 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 149ms (Views: 138.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:27:23 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Eht3fih0QJGpinr0VBPoBzPg9WAs+5yLsn3QhupYxFlssk5rSfHPzXLN4PxNNhSxX5whYHuMDiRTfLvdnXImAw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000748333s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00037226999999999996s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0aa236b6ff22e4e1854b3'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$XaBnOaxAoE2n472ndSyhvuLB88ZRQFYSOnoaz3yrI6N9TnOnFpn8C", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000305542s
+Completed 500 Internal Server Error in 158ms
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/users/registrations_controller.rb:15:in `format'
+app/controllers/users/registrations_controller.rb:15:in `create'
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000333034s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000657471s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000734685s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0aa236b6ff22e4e1854b3')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.006596240000000001s
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:28:22 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Eht3fih0QJGpinr0VBPoBzPg9WAs+5yLsn3QhupYxFlssk5rSfHPzXLN4PxNNhSxX5whYHuMDiRTfLvdnXImAw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00085835s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000502575s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0aa5e6b6ff22ea26d6bf2'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$wnygT0zB0XQs7oYYAkhLGeilbTqainZQWMsQ8l8lWC1JMN5qUlE4q", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.00038484399999999996s
+Completed 500 Internal Server Error in 166ms
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/users/registrations_controller.rb:15:in `format'
+app/controllers/users/registrations_controller.rb:15:in `create'
+Started PUT "/__web_console/repl_sessions/5b5fc03ac60d8e06d21d8808972a7616" for 127.0.0.1 at 2017-10-13 17:28:38 +0530
+Started PUT "/__web_console/repl_sessions/5b5fc03ac60d8e06d21d8808972a7616" for 127.0.0.1 at 2017-10-13 17:28:38 +0530
+Started PUT "/__web_console/repl_sessions/5b5fc03ac60d8e06d21d8808972a7616" for 127.0.0.1 at 2017-10-13 17:29:01 +0530
+Started PUT "/__web_console/repl_sessions/5b5fc03ac60d8e06d21d8808972a7616" for 127.0.0.1 at 2017-10-13 17:29:07 +0530
+Started PUT "/__web_console/repl_sessions/5b5fc03ac60d8e06d21d8808972a7616" for 127.0.0.1 at 2017-10-13 17:29:13 +0530
+Started PUT "/__web_console/repl_sessions/5b5fc03ac60d8e06d21d8808972a7616" for 127.0.0.1 at 2017-10-13 17:29:51 +0530
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.00072391s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00037814500000000003s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0aa5e6b6ff22ea26d6bf2')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000314248s
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:30:48 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Eht3fih0QJGpinr0VBPoBzPg9WAs+5yLsn3QhupYxFlssk5rSfHPzXLN4PxNNhSxX5whYHuMDiRTfLvdnXImAw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001061535s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0006270609999999999s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0aaf06b6ff22f0803e368'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$QUWlNt33/N6pDRZF2fEGkePn4iLKawyY7YL1FZYMYsNTz87B2VWWm", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.0005372080000000001s
+Completed 500 Internal Server Error in 164ms
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/users/registrations_controller.rb:15:in `format'
+app/controllers/users/registrations_controller.rb:15:in `create'
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000728841s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000662526s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0aaf06b6ff22f0803e368')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000640707s
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:33:26 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Eht3fih0QJGpinr0VBPoBzPg9WAs+5yLsn3QhupYxFlssk5rSfHPzXLN4PxNNhSxX5whYHuMDiRTfLvdnXImAw==", "user"=>{"email"=>"test@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000549041s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000392389s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369'), "email"=>"test@progton.com", "encrypted_password"=>"$2a$11$LqpRkhY5NGFVCG/kUNgSRO3wOoTeloJgVIShFeRHAGLHn6rhbg/jS", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000362367s
+Redirected to http://localhost:3000/people
+Completed 302 Found in 141ms
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 17:33:27 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00046976699999999995s
+  Rendered people/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 133ms (Views: 128.3ms)
+
+
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0008838930000000001s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>BSON::ObjectId('59e09bdc6b6ff226f7c5bcbc')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0007278489999999999s
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 17:43:03 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (0.8ms)
+  Rendered users/registrations/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 32ms (Views: 31.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 17:43:22 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u4qC1/EWfyLKlYuPdnJnvgg+SiRQWiCSdG2aOnt9jPTHsPzWKCi6FwOUBc72/O9RH4VXB45s0mZppmk7p76W3A==", "user"=>{"email"=>"test2@progton.com", "home_address"=>"", "work_address"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000578872s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test2@progton.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000436639s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0ae566b6ff22f0803e36b'), "email"=>"test2@progton.com", "encrypted_password"=>"$2a$11$T5nx3esN1JUjKkyPHVGiYOmshJm4MsLAiyIfV8qW99m4sBf03Q5YC", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.000444017s
+Redirected to http://localhost:3000/people
+Completed 302 Found in 115875ms
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 17:45:18 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0005082519999999999s
+  Rendered people/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 49ms (Views: 42.2ms)
+
+
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000568964s
+Started GET "/" for 127.0.0.1 at 2017-10-13 17:48:41 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000418849s
+  Rendered people/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 25ms (Views: 19.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-10-13 17:49:13 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-10-13 17:49:23 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001111996s
+  Rendered people/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 35ms (Views: 33.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 17:49:28 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 34ms (Views: 32.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-13 17:49:38 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e1yqGdDZBJTTWA1kcpaXaenfpvEu9shyEbsoJIOq7WWPdSusMMwyqM97x0u8jmxdzQkYbdlWZi+A3s5OCtFquw==", "user"=>{"email"=>"test@progton.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000861762s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>BSON::ObjectId('59e09bdc6b6ff226f7c5bcbc')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000707619s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0005632199999999999s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00036494399999999997s
+MONGODB | localhost:27017 | mongo_people_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "u"=>{"$set"=>{"last_sign_in_at"=>2017-10-13 12:24:55 UTC, "current_sign_in_at"=>2017-10-13 12:24:55 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>...
+MONGODB | localhost:27017 | mongo_people_development.update | SUCCEEDED | 0.000576384s
+Redirected to http://localhost:3000/
+Completed 302 Found in 317597ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 17:54:55 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000430993s
+  Rendered people/index.html.erb within layouts/application (2.3ms)
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000448731s
+Completed 200 OK in 20ms (Views: 18.7ms)
+
+
+Started GET "/people/59e064806b6ff2134c8b1c3f/edit" for 127.0.0.1 at 2017-10-13 17:55:17 +0530
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"59e064806b6ff2134c8b1c3f"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{"_id"=>BSON::ObjectId('59e064806b6ff2134c8b1c3f')}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0007672029999999999s
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (5.3ms)
+  Rendered people/edit.html.erb within layouts/application (7.5ms)
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000490179s
+Completed 200 OK in 39ms (Views: 34.7ms)
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 17:55:21 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000666997s
+  Rendered people/index.html.erb within layouts/application (3.9ms)
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0008759600000000001s
+Completed 200 OK in 32ms (Views: 30.6ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2017-10-13 18:07:39 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-10-13 18:07:43 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bb6OF3YFLPtGzl0ngJSvL4t00oKJNa5ZrKe7U+bbJhlsfn1WTBp1EubI5hKAdcOy10lalZPvuCZodrDCMYR4UA=="}
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001247619s
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 18:07:43 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000524211s
+  Rendered people/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 191ms (Views: 181.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 18:07:48 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (2.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 44ms (Views: 41.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-13 18:07:58 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oLQppI8qdNkGyV8AMsONqE6PZy9GuneV1pyLDOpr9sQL/2xYsG2wJIB5cY0flGAxVPZXJQSvrgKV1BuJ/kp5jA==", "user"=>{"email"=>"test@progton.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000901116s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@progton.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000776577s
+MONGODB | localhost:27017 | mongo_people_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "u"=>{"$set"=>{"current_sign_in_at"=>2017-10-13 12:37:58 UTC, "sign_in_count"=>2, "updated_at"=>2017-10-13 12:37:58 UTC}}, "multi"=>false, "upsert"=>false}], "o...
+MONGODB | localhost:27017 | mongo_people_development.update | SUCCEEDED | 0.0005874770000000001s
+Redirected to http://localhost:3000/
+Completed 302 Found in 161ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 18:07:58 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000421388s
+  Rendered people/index.html.erb within layouts/application (2.5ms)
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000492391s
+Completed 200 OK in 19ms (Views: 17.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-10-13 18:13:35 +0530
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vZ/S8EPgZUJkYXfi8ymx4U36yStogy9FqjeE3M4bUcduLHjL9+86JiLScwBIQKdzMw4y2bBoigDrbaaCMcjA/A=="}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000469296s
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 18:13:35 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000399365s
+  Rendered people/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 30ms (Views: 29.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 18:13:41 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 20ms (Views: 19.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-13 18:13:45 +0530
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.4ms)
+  Rendered users/registrations/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 27ms (Views: 26.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-13 18:14:15 +0530
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nz0UwOeoCPDgjlhXIcekHIAjCCgKumJ+WKTSzxF1A5Gr3fR2XO782Sx3Ak+IPv8LgA9NXZW0HocxTWFrp1EaKg==", "user"=>{"email"=>"test@gmail.com", "home_address"=>"test", "work_address"=>"test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :home_address, :work_address
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"name"=>"guest"}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000497231s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00035263199999999997s
+MONGODB | localhost:27017 | mongo_people_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('59e0b5206b6ff2312df7fad5'), "email"=>"test@gmail.com", "encrypted_password"=>"$2a$11$TfuAgF4TpiJ2o8/r4FH/XeuGm9vIJbgjPGLco/FQDIRcdQ.Hl1y8u", "sign_in_count"=>0, "role_id"=>BSON::ObjectId('59e09...
+MONGODB | localhost:27017 | mongo_people_development.insert | SUCCEEDED | 0.00033546s
+Redirected to http://localhost:3000/people
+Completed 302 Found in 158ms
+
+
+Started GET "/people" for 127.0.0.1 at 2017-10-13 18:14:16 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000417478s
+  Rendered people/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 17ms (Views: 16.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 18:17:28 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.00034158s
+  Rendered people/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 17.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-13 18:17:35 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 25ms (Views: 23.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-10-13 18:17:54 +0530
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6pX7X5bAG9Mb0DoKeLPiIgG491RqZjXfVRH2YMnaIrfL82e3YwQ/rmJfiefoiiMt0jHeNmHru6kjfGGrPcdjmg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test@gmail.com"}, "limit"=>1, "sort"=>{"_id"=>1}, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0005452559999999999s
+MONGODB | localhost:27017 | mongo_people_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0b5206b6ff2312df7fad5')}, "u"=>{"$set"=>{"last_sign_in_at"=>2017-10-13 12:47:54 UTC, "current_sign_in_at"=>2017-10-13 12:47:54 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>...
+MONGODB | localhost:27017 | mongo_people_development.update | SUCCEEDED | 0.000469571s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"roles", "filter"=>{"_id"=>BSON::ObjectId('59e09bdc6b6ff226f7c5bcbc')}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000541901s
+Redirected to 
+Completed 500 Internal Server Error in 95599ms
+
+
+  
+NoMethodError (undefined method `user_url' for #<Users::SessionsController:0x007f2d600c1fe0>):
+  
+app/controllers/users/sessions_controller.rb:11:in `create'
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000972811s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}, "sort"=>{"_id"=>1}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.0011081329999999999s
+MONGODB | localhost:27017 | mongo_people_development.count | STARTED | {"count"=>"users", "query"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.count | SUCCEEDED | 0.000530907s
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.000635874s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0ab8f6b6ff22f0803e369')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000504903s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0ae566b6ff22f0803e36b')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.00043500399999999996s
+MONGODB | localhost:27017 | mongo_people_development.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{"_id"=>BSON::ObjectId('59e0b5206b6ff2312df7fad5')}, "limit"=>1}], "ordered"=>true}
+MONGODB | localhost:27017 | mongo_people_development.delete | SUCCEEDED | 0.000441558s
+Started GET "/" for 127.0.0.1 at 2017-10-13 18:27:48 +0530
+  
+NoMethodError (undefined method `enum' for User:Class):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-10-13 18:29:29 +0530
+  
+NameError (uninitialized constant Mongoid::Enum):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-10-13 18:29:31 +0530
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | Server localhost:27017 initializing.
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | mongo_people_development.find | STARTED | {"find"=>"people", "filter"=>{}}
+MONGODB | localhost:27017 | mongo_people_development.find | SUCCEEDED | 0.001074067s
+  Rendered people/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 221ms
+
+
+  
+ActionView::Template::Error (uninitialized constant Mongoid::Enum):
+    12:   	
+    13: 
+    14: 	<div id="user_nav">
+    15: 	  <% if user_signed_in? %>
+    16: 	    Signed in as <%= current_user.email %>. Not you?
+    17: 	    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    18: 	  <% else %>
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___2042186954755255548_29923240'
